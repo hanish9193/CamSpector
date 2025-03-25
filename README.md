@@ -3,6 +3,10 @@
 An advanced **CCTV-based Automatic Theft Detector** and **Vehicle Crash Detector** system that leverages real-time video analysis to enhance security and safety. CamSpector provides a user-friendly interface for monitoring, detecting, and alerting suspicious activities and crash events.
 
 ---
+## 🎥 Demo Video
+
+[Watch the Demo](SAMPLE.mp4)
+
 
 ## 🚀 Features
 
