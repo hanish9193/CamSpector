@@ -1,69 +1,153 @@
-# Welcome to your Lovable project
+# 📷 CamSpector
 
-## Project info
+An advanced **CCTV-based Automatic Theft Detector** and **Vehicle Crash Detector** system that leverages real-time video analysis to enhance security and safety. CamSpector provides a user-friendly interface for monitoring, detecting, and alerting suspicious activities and crash events.
 
-**URL**: https://lovable.dev/projects/65707d80-a592-485d-a3bf-0ef9f3c1f716
+---
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- 📊 **Automatic Theft Detection**: Identifies suspicious activities using YOLOv5 object detection and CNN binary classification.
+- 🚗 **Vehicle Crash Detection**: Detects vehicle collisions and triggers alerts in real-time.
+- 📹 **Real-time Monitoring**: Live feed visualization with detection overlays.
+- 🔔 **Alert System**: Sends automated emails to police using SMTP upon detection.
+- 📸 **Frame Extraction**: Captures and saves CCTV frames for further analysis.
+- 📈 **Event Logging**: Records detected events with timestamps for review.
+- 🖥️ **User-Friendly UI**: Intuitive graphical interface for police to monitor and manage feeds.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/65707d80-a592-485d-a3bf-0ef9f3c1f716) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Programming Language**: Python (YOLOv5, OpenCV, Tkinter)
+- **Object Detection**: YOLOv5 for real-time detection of theft and crashes
+- **CNN Classification**: Binary classification for event verification
+- **UI Framework**: Tkinter for building a responsive and simple user interface
+- **Email Service**: SMTP protocol for alerting authorities
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📋 Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Ensure you have the following installed:
 
-Follow these steps:
+- Python 3.x
+- OpenCV (`pip install opencv-python`)
+- YOLOv5 dependencies (`pip install torch torchvision matplotlib`)
+- Tkinter (Comes pre-installed with Python)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📦 Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Clone the repository:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+    ```bash
+    git clone https://github.com/hanish9193/CamSpector.git
+    cd CamSpector
+    ```
+
+2. Install required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Set up YOLOv5:
+
+    ```bash
+    git clone https://github.com/ultralytics/yolov5.git
+    cd yolov5
+    pip install -r requirements.txt
+    ```
+
+4. Run the application:
+
+    ```bash
+    python main.py
+    ```
+
+---
+
+## 📊 How It Works
+
+1. **Theft Detection**:
+   - YOLOv5 identifies objects in the CCTV feed.
+   - CNN binary classifier verifies potential theft.
+   - Alerts are sent via SMTP if theft is detected.
+
+2. **Crash Detection**:
+   - Detects sudden changes in vehicle motion patterns.
+   - Logs the event and sends an alert to authorities.
+
+3. **Frame Extraction**:
+   - Captures frames from the CCTV feed.
+   - Saves frames for offline analysis and review.
+
+4. **User Interface**:
+   - Provides live monitoring with event overlays.
+   - Allows police to manage and track incidents.
+
+---
+
+## 📸 Frame Extraction Code
+
+Here's a snippet to extract and save frames from the CCTV feed:
+
+```python
+import cv2
+
+def extract_frames(video_path, output_folder):
+    cap = cv2.VideoCapture(video_path)
+    frame_count = 0
+
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        frame_path = f"{output_folder}/frame_{frame_count}.jpg"
+        cv2.imwrite(frame_path, frame)
+        frame_count += 1
+
+    cap.release()
+
+extract_frames('cctv_feed.mp4', 'output_frames')
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📷 UI Preview
 
-**Use GitHub Codespaces**
+![CamSpector UI Screenshot](assets/ui_preview.png)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🤝 Contributing
 
-This project is built with .
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m "Added new feature"`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/65707d80-a592-485d-a3bf-0ef9f3c1f716) and click on Share -> Publish.
+## 📄 License
 
-## I want to use a custom domain - is that possible?
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+
+## 📞 Contact
+
+For queries or collaboration, feel free to reach out via:
+
+- **GitHub**: [hanish9193](https://github.com/hanish9193)
+- **Email**: your-email@example.com
+
+---
+
+🔒 **CamSpector – Securing Spaces, Saving Lives.**
+
