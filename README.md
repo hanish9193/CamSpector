@@ -145,8 +145,7 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 For queries or collaboration, feel free to reach out via:
 
 - **GitHub**: [hanish9193](https://github.com/hanish9193)
-- **Email**: your-email@example.com
-
+- **Email**: hanish.kumar9193@gmail.com
 ---
 
 🔒 **CamSpector – Securing Spaces, Saving Lives.**
