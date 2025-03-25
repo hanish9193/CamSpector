@@ -5,7 +5,8 @@ An advanced **CCTV-based Automatic Theft Detector** and **Vehicle Crash Detector
 ---
 ## 🎥 Demo Video
 
-[Watch the Demo](SAMPLE.mp4)
+https://github.com/hanish9193/CamSpector/assets/SAMPLE.mp4
+
 
 
 ## 🚀 Features
